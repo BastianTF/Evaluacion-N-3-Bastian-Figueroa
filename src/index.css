@@ -1,0 +1,194 @@
+/* Reset CSS Obligatorio */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.5;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+body {
+  padding: 1.5rem;
+}
+
+.app-shell {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.app-header,
+.app-footer {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.app-header h1 {
+  font-size: clamp(2rem, 2.5vw, 2.75rem);
+  margin-top: 0.5rem;
+}
+
+.brand-tag {
+  display: inline-block;
+  background: #2563eb;
+  color: white;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.app-main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.panel-form,
+.panel-lista {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.formulario {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  background: #eff6ff;
+  border-radius: 0.85rem;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+label {
+  display: grid;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.85rem;
+  padding: 0.9rem 1rem;
+  background: #f8fafc;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.btn-principal,
+.btn-secundario {
+  border: none;
+  border-radius: 0.95rem;
+  padding: 0.95rem 1.25rem;
+  font-weight: 700;
+}
+
+.btn-principal {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-secundario {
+  background: #e2e8f0;
+  color: #1f2937;
+}
+
+.lista-vehiculos {
+  display: grid;
+  gap: 1rem;
+}
+
+.card-vehiculo {
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card-vehiculo header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.card-vehiculo h3 {
+  font-size: 1.2rem;
+}
+
+.card-vehiculo dl {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.card-vehiculo dt {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.card-vehiculo dd {
+  margin-left: 0;
+  font-weight: 600;
+}
+
+.empty-state {
+  color: #475569;
+  font-style: italic;
+}
+
+@media (min-width: 900px) {
+  .app-main {
+    grid-template-columns: minmax(320px, 420px) 1fr;
+  }
+}
