@@ -3,11 +3,17 @@ function CardVehiculo({ vehiculo, onEliminar }) {
     dateStyle: 'short',
     timeStyle: 'short',
   });
+  const tarjetaClase = `card-vehiculo ${vehiculo.permanente ? 'permanente' : 'temporal'}`;
 
   return (
-    <article className="card-vehiculo">
+    <article className={tarjetaClase}>
       <header>
-        <h3>{vehiculo.placa}</h3>
+        <div>
+          <h3>{vehiculo.placa}</h3>
+          <span className="badge">
+            {vehiculo.permanente ? 'Permanente' : 'Temporal'}
+          </span>
+        </div>
         <span>{fecha}</span>
       </header>
 

@@ -3,9 +3,12 @@ import Formulario from './components/Formulario.jsx';
 import ListaVehiculos from './components/ListaVehiculos.jsx';
 
 const STORAGE_KEY = 'gestion-estacionamientos:vehiculos';
+const MAX_CAPACIDAD = 10;
 
 function App() {
   const [vehiculos, setVehiculos] = useState([]);
+  const ocupacion = vehiculos.length;
+  const cuposDisponibles = Math.max(0, MAX_CAPACIDAD - ocupacion);
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
@@ -23,6 +26,10 @@ function App() {
   }, [vehiculos]);
 
   const agregarVehiculo = (vehiculo) => {
+    if (ocupacion >= MAX_CAPACIDAD) {
+      return;
+    }
+
     setVehiculos((prev) => [vehiculo, ...prev]);
   };
 
@@ -43,7 +50,12 @@ function App() {
       <main className="app-main">
         <section className="panel-form">
           <h2>Registro de Ingresos</h2>
-          <Formulario onSubmit={agregarVehiculo} ocupacion={vehiculos.length} />
+          <Formulario
+            onSubmit={agregarVehiculo}
+            ocupacion={ocupacion}
+            capacidad={MAX_CAPACIDAD}
+            disponibles={cuposDisponibles}
+          />
         </section>
 
         <section className="panel-lista">

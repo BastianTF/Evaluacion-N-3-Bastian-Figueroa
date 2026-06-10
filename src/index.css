@@ -1,4 +1,3 @@
-/* Reset CSS Obligatorio */
 * {
   margin: 0;
   padding: 0;
@@ -111,6 +110,20 @@ label {
   font-weight: 600;
 }
 
+.form-checkbox {
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.form-error {
+  color: #b91c1c;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 0.85rem;
+  padding: 0.85rem 1rem;
+  font-weight: 600;
+}
+
 input,
 textarea {
   width: 100%;
@@ -144,7 +157,10 @@ textarea {
 }
 
 .lista-vehiculos {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
   gap: 1rem;
 }
 
@@ -154,6 +170,18 @@ textarea {
   padding: 1.25rem;
   display: grid;
   gap: 1rem;
+  min-width: 250px;
+  flex: 1 1 320px;
+  background: white;
+}
+
+.card-vehiculo.permanente {
+  border-color: #0f766e;
+  background: #ecfdf5;
+}
+
+.card-vehiculo.temporal {
+  border-color: #2563eb;
 }
 
 .card-vehiculo header {
@@ -161,6 +189,28 @@ textarea {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-vehiculo.permanente .badge {
+  background: #0f766e;
+  color: white;
+}
+
+.card-vehiculo.temporal .badge {
+  background: #bfdbfe;
+  color: #1e3a8a;
 }
 
 .card-vehiculo h3 {
